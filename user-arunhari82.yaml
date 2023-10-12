@@ -1,0 +1,8 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+ name: arunhari82
+spec:
+ profile:
+ displayName: "Arun Hariharan"
+ memberOf: []
