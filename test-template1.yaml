@@ -151,6 +151,11 @@ spec:
           artifactId: ${{ parameters.artifactId }}
           javaPackageName: ${{ parameters.javaPackageName }}
           sourceControl: github.com
+    - id: log-message
+      name: Log Output Directory
+      action: debug:log
+      input:
+        message: 'Hello, ${{ steps["template"].output }}!'    
 
     
     
