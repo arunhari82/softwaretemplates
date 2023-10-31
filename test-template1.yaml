@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: test-template
   title: Test Template
-  description: Test Template Updated 1.5
+  description: Test Template Updated 1.6
   tags:
     - quarkus
     - java
