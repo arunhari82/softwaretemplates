@@ -152,17 +152,14 @@ spec:
           javaPackageName: ${{ parameters.javaPackageName }}
           sourceControl: github.com
 
-    - id: serialize-template-output
-      name: Serialize JSON
-      action: roadiehq:utils:serialize:json
+    - id: zip-workspace-content
+      name: zipcontent
+      action: roadiehq:utils:zip
       input:
-        data: ${{ steps["template"].output }}  
+        path: "."
+        outputPath: /tmp/rendered-template.zip  
 
-    - id: log-message
-      name: Log Message
-      action: debug:log
-      input:
-        message: 'Hello, ${{ steps["serialize-template-output"].serialized }}!'      
+   
 
     
     
