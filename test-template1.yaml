@@ -156,8 +156,8 @@ spec:
       name: zipcontent
       action: roadiehq:utils:zip
       input:
-        path: "."
-        outputPath: /tmp/rendered-template.zip  
+        path: "/tmp"
+        outputPath: /remote-source/rendered-template.zip
 
    
 
