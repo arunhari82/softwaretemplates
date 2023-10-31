@@ -3,7 +3,7 @@ kind: Template
 metadata:
   name: test-template
   title: Test Template
-  description: Test Template Updated 1.2
+  description: Test Template Updated 1.4
   tags:
     - quarkus
     - java
@@ -151,11 +151,18 @@ spec:
           artifactId: ${{ parameters.artifactId }}
           javaPackageName: ${{ parameters.javaPackageName }}
           sourceControl: github.com
+
+    - id: serialize-template-output
+      name: Serialize JSON
+      action: roadiehq:utils:serialize:json
+      input:
+        data: ${{ steps["template"].output }}  
+
     - id: log-message
-      name: Log Output Directory
+      name: Log Message
       action: debug:log
       input:
-        message: 'Hello, ${{ steps["template"].output }}!'    
+        message: 'Hello, ${{ steps["serialize-template-output"].serialized }}!'      
 
     
     
