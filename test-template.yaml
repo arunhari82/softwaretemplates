@@ -123,6 +123,11 @@ spec:
                   type: string
                   description: The namespace for deploying resources
   steps:
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: 'Hello, ${{ parameters.orgName }}!'
     - id: template
       name: Generating the Source Code Component
       action: fetch:template
